@@ -1,0 +1,34 @@
+%p#notice= notice
+%p
+  %b Name:
+  = @post.name
+%p
+  %b Title:
+  = @post.title
+%p
+  %b Content:
+  = @post.content
+%h2 Comments
+- @post.comments.each do |comment|
+  %p
+    %b Commenter:
+    = comment.commenter
+  %p
+    %b Comment:
+    = comment.body
+%h2 Add a comment:
+= form_for([@post, @post.comments.build]) do |f|
+  .field
+    = f.label :commenter
+    %br/
+    = f.text_field :commenter
+  .field
+    = f.label :body
+    %br/
+    = f.text_area :body
+  .actions
+    = f.submit
+%br/
+= link_to 'Edit Post', edit_post_path(@post)
+|
+\#{link_to 'Back to Posts', posts_path} |
