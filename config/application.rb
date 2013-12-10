@@ -35,7 +35,7 @@ module Blog
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
-    config.assets.initialize_on_precompile = false
+    # config.assets.initialize_on_precompile = false
     config.assets.compile = true
 
     # Configure the default encoding used in templates for Ruby 1.9.
