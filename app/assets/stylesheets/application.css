@@ -13,4 +13,5 @@
  *= require bootstrap_override
  *= require home
  *= require_self
+ *= require ie8
  */
