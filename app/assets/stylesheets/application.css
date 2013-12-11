@@ -11,7 +11,9 @@
 
  *= require bootstrap
  *= require bootstrap_override
+ *= require comments
  *= require home
- *= require_self
  *= require ie8
+ *= require posts
+ *= require scaffolds
  */
