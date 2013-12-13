@@ -5,4 +5,5 @@
 .bootstrap-col-demo {
   background: #EEEEEE;
   border: 1px solid #CCCCCC;
+  @include border-radius(4px, 4px);
 }

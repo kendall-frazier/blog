@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 ruby "1.9.3"
-gem 'rails', '3.2.8'
+gem 'rails', '3.2.16'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -8,10 +8,15 @@ gem 'rails', '3.2.8'
 gem 'pg'
 gem 'rails_12factor', group: :production
 
-gem 'sass-rails',   '~> 3.2.3'
-gem 'bootstrap-sass', '~> 3.0.3.0'
-
 gem 'coffee-rails', '~> 3.2.1'
+
+group :assets do
+  gem 'sass-rails' # if running rails 3.1 or greater
+  gem 'compass-rails'
+end
+
+# gem 'compass', :git => "https://github.com/chriseppstein/compass.git"
+
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', :platforms => :ruby
