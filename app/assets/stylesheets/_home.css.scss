@@ -7,3 +7,18 @@
   border: 1px solid #CCCCCC;
   @include border-radius(4px, 4px);
 }
+
+.nav-box {
+  border: 1px solid #cccccc;
+  @include border-radius(4px);
+}
+
+#one, #two, #three {
+  height: 700px;
+}
+
+.affix {
+  position: fixed;
+  top: 30px;
+  width: 12.6667%
+}

@@ -15,6 +15,8 @@ group :assets do
   gem 'compass-rails'
 end
 
+gem "font-awesome-rails"
+
 # gem 'compass', :git => "https://github.com/chriseppstein/compass.git"
 
 
