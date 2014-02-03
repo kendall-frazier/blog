@@ -25,6 +25,7 @@ gem "font-awesome-rails"
 
 gem 'uglifier', '>= 1.0.3'
 
+# gem "respond-rails", "~> 1.0"
 
 gem 'haml'
 gem 'jquery-rails'
