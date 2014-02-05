@@ -2,55 +2,90 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
+
 chartData = [
-  country: "USA"
+  date: "2013-12-25"
   visits: 4252
 ,
-  country: "China"
+  date: "2013-12-26"
   visits: 1882
 ,
-  country: "Japan"
+  date: "2013-12-27"
   visits: 1809
 ,
-  country: "Germany"
+  date: "2013-12-28"
   visits: 1322
 ,
-  country: "UK"
+  date: "2013-12-29"
   visits: 1122
 ,
-  country: "France"
+  date: "2013-12-30"
   visits: 1114
 ,
-  country: "India"
+  date: "2013-12-31"
   visits: 984
 ,
-  country: "Spain"
+  date: "2014-01-01"
   visits: 711
 ,
-  country: "Netherlands"
+  date: "2014-01-02"
   visits: 665
 ,
-  country: "Russia"
+  date: "2014-01-03"
   visits: 580
 ,
-  country: "South Korea"
+  date: "2014-01-04"
   visits: 443
 ,
-  country: "Canada"
+  date: "2014-01-05"
   visits: 441
 ,
-  country: "Brazil"
+  date: "2014-01-06"
   visits: 395
 ,
-  country: "Italy"
+  date: "2014-01-07"
   visits: 386
 ,
-  country: "Australia"
+  date: "2014-01-08"
   visits: 384
 ,
-  country: "Taiwan"
+  date: "2014-01-09"
   visits: 338
 ,
-  country: "Poland"
+  date: "2014-01-10"
   visits: 328
 ]
+
+
+AmCharts.ready ->
+
+  AmCharts.theme = AmCharts.themes.dark
+
+  chart = new AmCharts.AmSerialChart()
+  chart.dataProvider = chartData
+  chart.categoryField = "date"
+  chart.dataDateFormat = "YYYY-MM-DD"
+
+  categoryAxis = chart.categoryAxis
+  categoryAxis.parseDates = true
+  categoryAxis.minPeriod = "DD"
+  categoryAxis.autoGridCount = false
+  categoryAxis.gridCount = chartData.length
+  categoryAxis.gridPosition = "start"
+  categoryAxis.labelRotation = 90
+
+  graph = new AmCharts.AmGraph()
+  graph.valueField = "visits"
+  graph.type = "line"
+  graph.balloonText = "[[date]]: <b>[[value]]</b>"
+  graph.fillAlphas = 0.8
+
+  chartScrollbar = new AmCharts.ChartScrollbar()
+  chartScrollbar.graph = graph
+  chartScrollbar.scrollbarHeight = 50
+  chart.addChartScrollbar chartScrollbar
+
+
+  chart.addGraph graph
+
+  chart.write "chartdiv"
