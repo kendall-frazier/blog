@@ -1,0 +1,17 @@
+//= require amcharts/amcharts
+//= require amcharts/funnel
+//= require amcharts/gauge
+//= require amcharts/pie
+//= require amcharts/radar
+//= require amcharts/serial
+//= require amcharts/xy
+//= require amcharts/themes/chalk
+//= require amcharts/themes/dark
+//= require amcharts/themes/light
+//= require amcharts/themes/patterns
+//= require amcharts/exporting/amexport
+//= require amcharts/exporting/canvg
+//= require amcharts/exporting/filesaver
+//= require amcharts/exporting/jspdf
+//= require amcharts/exporting/jspdf.plugin.addimage
+//= require amcharts/exporting/rgbcolor

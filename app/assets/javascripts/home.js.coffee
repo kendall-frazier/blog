@@ -56,10 +56,43 @@ chartData = [
   visits: 328
 ]
 
-
 AmCharts.ready ->
 
-  AmCharts.theme = AmCharts.themes.dark
+  AmCharts.theme = AmCharts.themes.light
+
+  gaugeChart = new AmCharts.AmAngularGauge()
+  gaugeAxis = new AmCharts.GaugeAxis()
+  gaugeAxis.startValue = 0
+  gaugeAxis.endValue = 220
+
+  gaugeBand = new AmCharts.GaugeBand()
+  gaugeBand.startValue = 0
+  gaugeBand.endValue = 120
+  gaugeBand.alpha = 1
+  gaugeBand.color = '#FFFFFF'
+
+  gaugeAxis.startAngle = -90
+  gaugeAxis.endAngle = 90
+
+  # gaugeAxis.addBand gaugeBand
+
+  # debugger
+
+
+  # debugger
+
+  arrow = new AmCharts.GaugeArrow()
+  arrow.value = 100
+  gaugeChart.addArrow arrow
+
+  gaugeChart.addAxis gaugeAxis
+
+  debugger
+
+  gaugeChart.write "gaugeChartDiv"
+
+
+  # ========================================================
 
   chart = new AmCharts.AmSerialChart()
   chart.dataProvider = chartData
@@ -74,11 +107,20 @@ AmCharts.ready ->
   categoryAxis.gridPosition = "start"
   categoryAxis.labelRotation = 90
 
+  chartCursor = new AmCharts.ChartCursor()
+  chart.addChartCursor(chartCursor)
+
   graph = new AmCharts.AmGraph()
   graph.valueField = "visits"
   graph.type = "line"
   graph.balloonText = "[[date]]: <b>[[value]]</b>"
-  graph.fillAlphas = 0.8
+  graph.fillAlphas = 0
+  graph.bullet = 'round'
+  graph.bulletBorderAlpha = 1
+  graph.bulletColor = '#ffffff'
+  graph.hideBulletsCount = 100
+  graph.useLineColorForBulletBorder = true
+
 
   chartScrollbar = new AmCharts.ChartScrollbar()
   chartScrollbar.graph = graph
@@ -87,5 +129,7 @@ AmCharts.ready ->
 
 
   chart.addGraph graph
+
+  chart.pathToImages = 'https://employeereferrals.s3.amazonaws.com/images/amcharts/'
 
   chart.write "chartdiv"

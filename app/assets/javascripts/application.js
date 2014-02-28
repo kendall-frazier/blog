@@ -13,6 +13,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap3/bootstrap
-// = require amcharts/amcharts
-//= require amcharts/serial
+//= require amcharts/index
 //= require_tree .
