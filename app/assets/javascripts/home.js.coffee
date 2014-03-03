@@ -60,35 +60,57 @@ AmCharts.ready ->
 
   AmCharts.theme = AmCharts.themes.light
 
+  arrow = undefined
+  gaugeAxis = undefined
+  gaugeChart = undefined
   gaugeChart = new AmCharts.AmAngularGauge()
   gaugeAxis = new AmCharts.GaugeAxis()
   gaugeAxis.startValue = 0
-  gaugeAxis.endValue = 220
-
-  gaugeBand = new AmCharts.GaugeBand()
-  gaugeBand.startValue = 0
-  gaugeBand.endValue = 120
-  gaugeBand.alpha = 1
-  gaugeBand.color = '#FFFFFF'
-
+  gaugeAxis.endValue = 20
   gaugeAxis.startAngle = -90
   gaugeAxis.endAngle = 90
-
-  # gaugeAxis.addBand gaugeBand
-
-  # debugger
-
-
-  # debugger
-
-  arrow = new AmCharts.GaugeArrow()
-  arrow.value = 100
-  gaugeChart.addArrow arrow
-
+  gaugeAxis.axisThickness = 5
+  gaugeAxis.labelFrequency = 1
+  gaugeAxis.labelOffset = 5
+  gaugeAxis.inside = false
+  gaugeAxis.minorTickInterval = 5
+  gaugeAxis.tickColor = "#000000"
+  gaugeAxis.tickLength = 10
+  gaugeAxis.tickThickness = 5
+  gaugeAxis.valueInterval = 5
+  gaugeAxis.unit = "%"
+  gaugeAxis.bottomText = "Percent of employees with synced social networks"
+  gaugeBandRed = undefined
+  gaugeBandRed = new AmCharts.GaugeBand
+  gaugeBandRed.startValue = 0
+  gaugeBandRed.endValue = 5
+  gaugeBandRed.alpha = 1
+  gaugeBandRed.color = "#cc4748"
+  gaugeBandRed.innerRadius = "55%"
+  gaugeBandYellow = undefined
+  gaugeBandYellow = new AmCharts.GaugeBand
+  gaugeBandYellow.startValue = 5
+  gaugeBandYellow.endValue = 10
+  gaugeBandYellow.alpha = 1
+  gaugeBandYellow.color = "#fdd400"
+  gaugeBandYellow.innerRadius = "55%"
+  gaugeBandGreen = undefined
+  gaugeBandGreen = new AmCharts.GaugeBand
+  gaugeBandGreen.startValue = 10
+  gaugeBandGreen.endValue = 20
+  gaugeBandGreen.alpha = 1
+  gaugeBandGreen.color = "#84b761"
+  gaugeBandGreen.innerRadius = "55%"
+  gaugeAxis.bands = [ gaugeBandRed, gaugeBandYellow, gaugeBandGreen ]
   gaugeChart.addAxis gaugeAxis
-
-  debugger
-
+  arrow = new AmCharts.GaugeArrow()
+  arrow.value = 11
+  arrow.innerRadius = "25%"
+  arrow.nailAlpha = 0
+  arrow.alpha = 1
+  arrow.radius = "80%"
+  arrow.startWidth = 15
+  gaugeChart.addArrow arrow
   gaugeChart.write "gaugeChartDiv"
 
 
