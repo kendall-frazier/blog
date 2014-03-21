@@ -9,107 +9,107 @@
 
 chartData = [
   first_name: "Edmund",
-  last_name: "Woo",
+  last_name: "Edmund Woo",
   number_of_referrals_without_contact_attempts: 12,
   contact_attempt_points: 0
 ,
   first_name: "Gina",
-  last_name: "Conigliaro",
+  last_name: "Gina Conigliaro",
   number_of_referrals_without_contact_attempts: 8,
   contact_attempt_points: 0
 ,
   first_name: "Jason",
-  last_name: "Buss",
+  last_name: "Jason Buss",
   number_of_referrals_without_contact_attempts: 7,
   contact_attempt_points: 0
 ,
   first_name: "David",
-  last_name: "Christensen",
+  last_name: "David Christensen",
   number_of_referrals_without_contact_attempts: 6,
   contact_attempt_points: 0
 ,
   first_name: "Cindy",
-  last_name: "Aponte",
+  last_name: "Cindy Aponte",
   number_of_referrals_without_contact_attempts: 5,
   contact_attempt_points: 0
 ,
   first_name: "Heather",
-  last_name: "Smith",
+  last_name: "Heather Smith",
   number_of_referrals_without_contact_attempts: 5,
   contact_attempt_points: 0
 ,
   first_name: "Sharonica",
-  last_name: "Hendrieth-Brown",
+  last_name: "Sharonica Hendrieth-Brown",
   number_of_referrals_without_contact_attempts: 3,
   contact_attempt_points: 0
 ,
   first_name: "Angela",
-  last_name: "Carter",
+  last_name: "Angela Carter",
   number_of_referrals_without_contact_attempts: 3,
   contact_attempt_points: 0
 ,
   first_name: "Liz",
-  last_name: "Price",
+  last_name: "Liz Price",
   number_of_referrals_without_contact_attempts: 2,
   contact_attempt_points: 0
 ,
   first_name: "Emily",
-  last_name: "Korb",
+  last_name: "Emily Korb",
   number_of_referrals_without_contact_attempts: 2,
   contact_attempt_points: 2
 ,
   first_name: "Melinda",
-  last_name: "C.",
+  last_name: "Melinda C.",
   number_of_referrals_without_contact_attempts: 1,
   contact_attempt_points: 0
 ,
   first_name: "Christine",
-  last_name: "Collins",
+  last_name: "Christine Collins",
   number_of_referrals_without_contact_attempts: 0,
   contact_attempt_points: 1
 ,
   first_name: "Janice",
-  last_name: "Davis",
+  last_name: "Janice Davis",
   number_of_referrals_without_contact_attempts: 0,
   contact_attempt_points: 1
 ,
   first_name: "Alison",
-  last_name: "Dorsa",
+  last_name: "Alison Dorsa",
   number_of_referrals_without_contact_attempts: 0,
   contact_attempt_points: 1
 ,
   first_name: "Jacquelene",
-  last_name: "Thomas",
+  last_name: "Jacquelene Thomas",
   number_of_referrals_without_contact_attempts: 0,
   contact_attempt_points: 1
 ,
   first_name: "Gregory",
-  last_name: "Owens",
+  last_name: "Gregory Owens",
   number_of_referrals_without_contact_attempts: 0,
   contact_attempt_points: 2
 ,
   first_name: "Condenesa",
-  last_name: "Smith",
+  last_name: "Condenesa Smith",
   number_of_referrals_without_contact_attempts: 0,
   contact_attempt_points: 1
 ,
   first_name: "Brady",
-  last_name: "Banks",
+  last_name: "Brady Banks",
   number_of_referrals_without_contact_attempts: 0,
   contact_attempt_points: 1
 ,
   first_name: "Deirdre",
-  last_name: "Potter",
+  last_name: "Deirdre Potter",
   number_of_referrals_without_contact_attempts: 0,
   contact_attempt_points: 1
 ,
   first_name: "Caroline",
-  last_name: "Rodriguez",
+  last_name: "Caroline Rodriguez",
   number_of_referrals_without_contact_attempts: 0,
   contact_attempt_points: 1
 ,
   first_name: "Kimberly",
-  last_name: "Sydnor",
+  last_name: "Kimberly Sydnor",
   number_of_referrals_without_contact_attempts: 0,
   contact_attempt_points: 1
 ]
@@ -157,7 +157,7 @@ AmCharts.ready ->
   graph1.type = 'column'
   graph1.title = 'Uncontacted referrals'
   graph1.valueField = 'number_of_referrals_without_contact_attempts'
-  graph1.balloonText = "[[category]]'s uncontacted referrals:[[value]]"
+  graph1.balloonText = "[[first_name]] [[last_name]] uncontacted referrals:[[value]]"
   graph1.lineAlpha = 0
   graph1.fillColors = '#ADD981'
   graph1.fillAlphas = 1
