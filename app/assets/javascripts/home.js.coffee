@@ -2,156 +2,180 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
+# Place all the behaviors and hooks related to the matching controller here.
+# All this logic will automatically be available in application.js.
+# You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
+
 
 chartData = [
-  date: "2013-12-25"
-  visits: 4252
+  first_name: "Edmund",
+  last_name: "Woo",
+  number_of_referrals_without_contact_attempts: 12,
+  contact_attempt_points: 0
 ,
-  date: "2013-12-26"
-  visits: 1882
+  first_name: "Gina",
+  last_name: "Conigliaro",
+  number_of_referrals_without_contact_attempts: 8,
+  contact_attempt_points: 0
 ,
-  date: "2013-12-27"
-  visits: 1809
+  first_name: "Jason",
+  last_name: "Buss",
+  number_of_referrals_without_contact_attempts: 7,
+  contact_attempt_points: 0
 ,
-  date: "2013-12-28"
-  visits: 1322
+  first_name: "David",
+  last_name: "Christensen",
+  number_of_referrals_without_contact_attempts: 6,
+  contact_attempt_points: 0
 ,
-  date: "2013-12-29"
-  visits: 1122
+  first_name: "Cindy",
+  last_name: "Aponte",
+  number_of_referrals_without_contact_attempts: 5,
+  contact_attempt_points: 0
 ,
-  date: "2013-12-30"
-  visits: 1114
+  first_name: "Heather",
+  last_name: "Smith",
+  number_of_referrals_without_contact_attempts: 5,
+  contact_attempt_points: 0
 ,
-  date: "2013-12-31"
-  visits: 984
+  first_name: "Sharonica",
+  last_name: "Hendrieth-Brown",
+  number_of_referrals_without_contact_attempts: 3,
+  contact_attempt_points: 0
 ,
-  date: "2014-01-01"
-  visits: 711
+  first_name: "Angela",
+  last_name: "Carter",
+  number_of_referrals_without_contact_attempts: 3,
+  contact_attempt_points: 0
 ,
-  date: "2014-01-02"
-  visits: 665
+  first_name: "Liz",
+  last_name: "Price",
+  number_of_referrals_without_contact_attempts: 2,
+  contact_attempt_points: 0
 ,
-  date: "2014-01-03"
-  visits: 580
+  first_name: "Emily",
+  last_name: "Korb",
+  number_of_referrals_without_contact_attempts: 2,
+  contact_attempt_points: 2
 ,
-  date: "2014-01-04"
-  visits: 443
+  first_name: "Melinda",
+  last_name: "C.",
+  number_of_referrals_without_contact_attempts: 1,
+  contact_attempt_points: 0
 ,
-  date: "2014-01-05"
-  visits: 441
+  first_name: "Christine",
+  last_name: "Collins",
+  number_of_referrals_without_contact_attempts: 0,
+  contact_attempt_points: 1
 ,
-  date: "2014-01-06"
-  visits: 395
+  first_name: "Janice",
+  last_name: "Davis",
+  number_of_referrals_without_contact_attempts: 0,
+  contact_attempt_points: 1
 ,
-  date: "2014-01-07"
-  visits: 386
+  first_name: "Alison",
+  last_name: "Dorsa",
+  number_of_referrals_without_contact_attempts: 0,
+  contact_attempt_points: 1
 ,
-  date: "2014-01-08"
-  visits: 384
+  first_name: "Jacquelene",
+  last_name: "Thomas",
+  number_of_referrals_without_contact_attempts: 0,
+  contact_attempt_points: 1
 ,
-  date: "2014-01-09"
-  visits: 338
+  first_name: "Gregory",
+  last_name: "Owens",
+  number_of_referrals_without_contact_attempts: 0,
+  contact_attempt_points: 2
 ,
-  date: "2014-01-10"
-  visits: 328
+  first_name: "Condenesa",
+  last_name: "Smith",
+  number_of_referrals_without_contact_attempts: 0,
+  contact_attempt_points: 1
+,
+  first_name: "Brady",
+  last_name: "Banks",
+  number_of_referrals_without_contact_attempts: 0,
+  contact_attempt_points: 1
+,
+  first_name: "Deirdre",
+  last_name: "Potter",
+  number_of_referrals_without_contact_attempts: 0,
+  contact_attempt_points: 1
+,
+  first_name: "Caroline",
+  last_name: "Rodriguez",
+  number_of_referrals_without_contact_attempts: 0,
+  contact_attempt_points: 1
+,
+  first_name: "Kimberly",
+  last_name: "Sydnor",
+  number_of_referrals_without_contact_attempts: 0,
+  contact_attempt_points: 1
 ]
 
 AmCharts.ready ->
 
-  AmCharts.theme = AmCharts.themes.light
-
-  arrow = undefined
-  gaugeAxis = undefined
-  gaugeChart = undefined
-  gaugeChart = new AmCharts.AmAngularGauge()
-  gaugeAxis = new AmCharts.GaugeAxis()
-  gaugeAxis.startValue = 0
-  gaugeAxis.endValue = 20
-  gaugeAxis.startAngle = -90
-  gaugeAxis.endAngle = 90
-  gaugeAxis.axisThickness = 5
-  gaugeAxis.labelFrequency = 1
-  gaugeAxis.labelOffset = 5
-  gaugeAxis.inside = false
-  gaugeAxis.minorTickInterval = 5
-  gaugeAxis.tickColor = "#000000"
-  gaugeAxis.tickLength = 10
-  gaugeAxis.tickThickness = 5
-  gaugeAxis.valueInterval = 5
-  gaugeAxis.unit = "%"
-  gaugeAxis.bottomText = "Percent of employees with synced social networks"
-  gaugeBandRed = undefined
-  gaugeBandRed = new AmCharts.GaugeBand
-  gaugeBandRed.startValue = 0
-  gaugeBandRed.endValue = 5
-  gaugeBandRed.alpha = 1
-  gaugeBandRed.color = "#cc4748"
-  gaugeBandRed.innerRadius = "55%"
-  gaugeBandYellow = undefined
-  gaugeBandYellow = new AmCharts.GaugeBand
-  gaugeBandYellow.startValue = 5
-  gaugeBandYellow.endValue = 10
-  gaugeBandYellow.alpha = 1
-  gaugeBandYellow.color = "#fdd400"
-  gaugeBandYellow.innerRadius = "55%"
-  gaugeBandGreen = undefined
-  gaugeBandGreen = new AmCharts.GaugeBand
-  gaugeBandGreen.startValue = 10
-  gaugeBandGreen.endValue = 20
-  gaugeBandGreen.alpha = 1
-  gaugeBandGreen.color = "#84b761"
-  gaugeBandGreen.innerRadius = "55%"
-  gaugeAxis.bands = [ gaugeBandRed, gaugeBandYellow, gaugeBandGreen ]
-  gaugeChart.addAxis gaugeAxis
-  arrow = new AmCharts.GaugeArrow()
-  arrow.value = 11
-  arrow.innerRadius = "25%"
-  arrow.nailAlpha = 0
-  arrow.alpha = 1
-  arrow.radius = "80%"
-  arrow.startWidth = 15
-  gaugeChart.addArrow arrow
-  gaugeChart.write "gaugeChartDiv"
-
-
-  # ========================================================
+  $('#chartdiv').height(chartData.length * 40)
 
   chart = new AmCharts.AmSerialChart()
   chart.dataProvider = chartData
-  chart.categoryField = "date"
-  chart.dataDateFormat = "YYYY-MM-DD"
+  chart.categoryField = 'first_name'
+  chart.startDuration = 1
+  chart.columnWidth = 0.95
+  chart.plotAreaBorderAlpha = 0
 
+  # this single line makes the chart a bar chart
+  chart.rotate = true
+
+  # AXES
+  # Category
   categoryAxis = chart.categoryAxis
-  categoryAxis.parseDates = true
-  categoryAxis.minPeriod = "DD"
-  categoryAxis.autoGridCount = false
-  categoryAxis.gridCount = chartData.length
-  categoryAxis.gridPosition = "start"
-  categoryAxis.labelRotation = 90
+  categoryAxis.gridPosition = 'start'
+  categoryAxis.gridAlpha = 0.1
+  categoryAxis.axisAlpha = 0
 
+  # Cursor
   chartCursor = new AmCharts.ChartCursor()
+  chartCursor.showNextAvailable = true
+  chartCursor.valueBalloonsEnabled = true
+  chartCursor.cursorPosition = 'mouse'
+  chartCursor.cursorAlpha = 0
+  chartCursor.cursorColor = '#333333'
   chart.addChartCursor(chartCursor)
 
-  graph = new AmCharts.AmGraph()
-  graph.valueField = "visits"
-  graph.type = "line"
-  graph.balloonText = "[[date]]: <b>[[value]]</b>"
-  graph.fillAlphas = 0
-  graph.bullet = 'round'
-  graph.bulletBorderAlpha = 1
-  graph.bulletColor = '#ffffff'
-  graph.hideBulletsCount = 100
-  graph.useLineColorForBulletBorder = true
+  # Value
+  valueAxis = new AmCharts.ValueAxis()
+  valueAxis.axisAlpha = 0
+  valueAxis.gridAlpha = 0.1
+  valueAxis.position = 'top'
+  chart.addValueAxis valueAxis
 
+  # GRAPHS
+  # first graph
+  graph1 = new AmCharts.AmGraph()
+  graph1.type = 'column'
+  graph1.title = 'Uncontacted referrals'
+  graph1.valueField = 'number_of_referrals_without_contact_attempts'
+  graph1.balloonText = "[[category]]'s uncontacted referrals:[[value]]"
+  graph1.lineAlpha = 0
+  graph1.fillColors = '#ADD981'
+  graph1.fillAlphas = 1
+  chart.addGraph graph1
 
-  chartScrollbar = new AmCharts.ChartScrollbar()
-  chartScrollbar.graph = graph
-  chartScrollbar.scrollbarHeight = 50
-  chart.addChartScrollbar chartScrollbar
+  # second graph
+  graph2 = new AmCharts.AmGraph()
+  graph2.type = 'column'
+  graph2.title = 'Contact attempts'
+  graph2.valueField = 'contact_attempt_points'
+  graph2.balloonText = "[[category]]'s contact attempts:[[value]]"
+  graph2.lineAlpha = 0
+  graph2.fillColors = '#81acd9'
+  graph2.fillAlphas = 1
+  chart.addGraph graph2
 
+  # LEGEND
+  legend = new AmCharts.AmLegend()
+  chart.addLegend legend
 
-  chart.addGraph graph
-
-  chart.pathToImages = 'https://employeereferrals.s3.amazonaws.com/images/amcharts/'
-
-  chart.write "chartdiv"
+  chart.write 'chartdiv'
